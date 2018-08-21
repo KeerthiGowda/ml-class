@@ -1,0 +1,68 @@
+# ML Class
+
+Welcome to today's class!  This document is your starting point.  It contains setup instructions and additonal resources.  If you are having issues running any of the programs or have questions about the material, please ask on our [Slack Channel](https://join.slack.com/t/wb-ml/shared_invite/enQtNDE5NDE4MTc2MDM3LTYyNTVmZWEyMzBlN2ZhN2Q3MjMyMTI1YWRjZDc2OGM0ZmE3NTIyYzMyM2E1NjllZTQxYmM4ZTcxMmEwODc3NDA) .  We also have a [Facebook Group](https://bit.ly/ml-class-facebook) that we invite you to join as you continue your journey in Machine Learning.
+
+## Resources
+
+1. [Slides](https://storage.googleapis.com/wandb-production.appspot.com/wandb/ML%20Class%201.pdf)
+2. [Slack Chat](https://join.slack.com/t/wb-ml/shared_invite/enQtNDE5NDE4MTc2MDM3LTYyNTVmZWEyMzBlN2ZhN2Q3MjMyMTI1YWRjZDc2OGM0ZmE3NTIyYzMyM2E1NjllZTQxYmM4ZTcxMmEwODc3NDA)
+3. [Facebook Group](https://bit.ly/ml-class-facebook)
+4. [Class Code](http://github.com/lukas/ml-class)
+5. [Contest Code](http://github.com/lukas/vision-project)
+6. [Deep Learning in the Real World](https://storage.googleapis.com/wandb-production.appspot.com/wandb/Overview.pdf)
+
+# The Hub
+
+For today's class we're going to create a virtual machine in the cloud that is optimized for Machine Learning with an Nvidia K80 GPU and pre-compiled ML libraries.  Every participant will have access to this machine for 30 days after which all local changes will be lost.
+
+## Setup
+
+1. Goto [W&B](https://app.wandb.ai) and signup for an account.  W&B is a cloud service that tracks and visualizes deep learning.
+2. After you've created an account, goto your [profile](https://app.wandb.ai/profile) and scroll to the bottom to find the "Hub Access" section.
+3. Todays code is **sigmoid-drums**, enter it and click Redeem
+
+[<img width="264" alt="screen shot 2018-07-25 at 2 11 40 pm" src="https://user-images.githubusercontent.com/17/43229102-754d00aa-9018-11e8-9d6d-c7a9a8e37af5.png">](https://app.wandb.ai/profile)
+
+## Usage
+
+After clicking Redeam you will be launched into a hosted lab environment.  On the left is a file browser, click `ml-class`, then open the `keras-perceptron` folder.
+
+<img width="333" alt="screen shot 2018-07-25 at 4 48 52 pm" src="https://user-images.githubusercontent.com/17/43233424-b6056b66-902a-11e8-8301-c71b698e469d.png">
+
+You can also open a unix terminal by clicking `File -> New -> Terminal`.
+
+<img width="418" alt="screen shot 2018-07-25 at 4 50 30 pm" src="https://user-images.githubusercontent.com/17/43233511-22cfb8c8-902b-11e8-8299-d7e3daa3dcc5.png">
+
+Today's class starts in `cd ~/ml-class/keras-perceptron/`.
+
+## Saving your progress
+
+If you want to persist changes you should fork the [ml-class](https://github.com/lukas/ml-class) repo by clicking the fork button on github. (You will need to create an account with GitHub).
+
+[<img width="1056" alt="screen shot 2018-08-19 at 11 42 52 pm" src="https://user-images.githubusercontent.com/17/44324262-f8c32680-a409-11e8-854d-a6c502260b83.png">](https://github.com/lukas/ml-class)
+
+```shell
+git remote add github https://github.com/USERNAME/ml-class.git
+```
+*be sure to replace USERNAME with your username*
+
+Now you can commit your changes by running `git commit -am 'my changes'` and do a `git push github master` to have them persisted to your account. (If you added any files that didn't exist before you'll have to manually call `git add filename` before calling `git commit`.
+
+# Additional Resources
+
+## Troubleshooting
+
+If you get an error that mentions your GPU it means you have another process running that's consuming memory.  Run `ps aux` and look for a process that is consuming more than 10% memory and note the PID in the left column.  Then run kill $PID.
+
+If you are getting 503 errors or you can't access your hub instance, goto: https://hub.wandb.us/hub/logout
+
+## Running outside of the hub
+
+If you want to run the experiments from your own machine you can always checkout the [ml-class](https://github.com/lukas/ml-class) github repo and install the requirements locally:
+
+```shell
+git clone https://github.com/lukas/ml-class
+cd ml-class
+pip install -r requirements.txt
+wandb login
+```
